@@ -122,11 +122,12 @@
 
                     </div>
                     <div class="mb-3">
-                        <input id="password" type="password" name="password" class="form-control" placeholder="Masukkan Kata Sandi" required autocomplete="new-password">
+                        <input id="password" type="password" name="password" class="form-control" placeholder="Masukkan Kata Sandi" required autocomplete="new-password" minlength="8">
+
 
                     </div>
                     <div class="mb-3">
-                        <input id="confirmation_password" type="password" name="confirmation_password" class="form-control" placeholder="Konfirmasi Kata Sandi" required min="8" autocomplete="new-password">
+                        <input id="confirmation_password" type="password" name="confirmation_password" class="form-control" placeholder="Konfirmasi Kata Sandi" required autocomplete="confirmation_password" min="8">
 
                     </div>
                     <div class="mb-3 d-flex justify-content-center">
@@ -145,7 +146,7 @@
             $('#registerForm').submit(function(event) {
                 event.preventDefault();
                 var formData = {
-                    name: $('#name').val(),
+                    name: $('#username').val(),
                     email: $('#email').val(),
                     phone_number: $('#phone-number').val(),
                     password: $('#password').val(),
@@ -160,15 +161,17 @@
                     contentType: 'application/json',
                     data: jsonData,
                     success: function(response) {
+                        console.log(response)
                         if (response.status) {
                             localStorage.setItem('token', response.token);
-                            window.location.href = 'login.html';
+                            // window.location.href = 'login.html';
                             alert(response.message);
                         } else {
                             alert(response.message);
                         }
                     },
                     error: function(xhr, status, error) {
+                        console.log(xhr);
                         alert(xhr.responseJSON.message);
                     }
                 });

@@ -9,13 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/FF2b1zp2n7c8w5V6fp/R85BjCbcBhkKt+5dxr4" crossorigin="anonymous"></script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Source Sans 3';
+            font-family: 'Source Sans 3', sans-serif;
             text-decoration: none;
             list-style-type: none;
         }
@@ -74,6 +73,11 @@
             font-size: 80px;
         }
         
+        .jarak {
+            width: 100px;
+            height: 20px;
+        }
+        
         #btnContent,
         #btnContent2 {
             width: 180px;
@@ -117,6 +121,10 @@
             color: white;
         }
         
+        .btnProgramKami:hover {
+            background-color: #c9d32c;
+        }
+        
         .boxVolunter {
             width: 100%;
             height: 400px;
@@ -133,6 +141,20 @@
         
         .btnVolunter:hover {
             background-color: #6d7125;
+        }
+        
+        footer {
+            background-color: #c9d32c;
+            color: white;
+            padding: 50px 0;
+        }
+        
+        footer a {
+            color: white;
+        }
+        
+        .textKami {
+            font-size: 20px;
         }
         
         @media (max-width: 576px) {
@@ -176,6 +198,36 @@
             }
             .video-text {
                 display: none;
+            }
+            .textKami {
+                font-size: 10px;
+                margin-bottom: 20px;
+            }
+            .boxKami {
+                margin-top: -30px;
+            }
+            .boxProgramKami {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .box1,
+            .box2 {
+                width: 130px;
+                height: 130px;
+            }
+            .hProduk {
+                font-size: 5px;
+                width: 110px;
+            }
+            .pProduk {
+                display: none;
+            }
+            .btnProgramKami {
+                display: none;
+            }
+            .jarak {
+                width: 25px;
             }
         }
     </style>
@@ -251,17 +303,20 @@
                 <div class="row content d-flex align-items-center">
                     <div class="col-12 col-md-2 text-center"><button id="btnContent">Apa yang kita lakukan</button></div>
                     <div class="col-12 col-md-2 text-white font-weight-bold video-text">
-                        <h5>Putar Video</h5>
+                        <a class="d-flex align-items-center" href="https://www.youtube.com/watch?v=wPFolj0WG0g" target="_blank">
+                            <img src="assets/icons/play.png" alt="" />
+                            <h5 class="ms-2 mt-2">Putar Video</h5>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid" style="background-color: #c9d32c">
-        <div class="row d-flex align-items-center justify-content-center" style="margin: 0 300px">
+    <div class="container-fluid boxKami" style="background-color: #c9d32c">
+        <div class="row d-flex align-items-center justify-content-center">
             <h2 class="text-center font-weight-bold text-white mt-4">Tentang Kami</h2>
-            <div class="row text-center text-white" style="font-size: 20px">
+            <div class="row textKami text-center text-white ">
                 Selamat datang di TBN Indonesia, satu-satunya sumber terkemuka untuk solusi bisnis yang inovatif dan berdaya saing di Indonesia. Kami merupakan Yayasan Sosial yang menaungi komunitas yang terdiri dari Investor, NGO, Educator, Philantrophy yang membawa
                 transformasi kepada kehidupan yang lebih baik memecahkan masalah sosial melalui kewirausahaan sosial.
             </div>
@@ -274,45 +329,78 @@
             </div>
             <br />
             <div class="row text-center d-flex justify-content-center align-items-center">
-                <button class="my-4 text-black" style="width: 220px; height: 35px; border: none; border-radius: 5px; background-color: aliceblue">Pelajari Lebih Lanjut</button>
+                <button class="my-4 text-black btnLanjut" style="width: 220px; height: 35px; border: none; border-radius: 5px; background-color: aliceblue">Pelajari Lebih Lanjut</button>
             </div>
         </div>
     </div>
-    <div class="container bg-danger" style="height: 350px; width: 100%">
-        <div class="row"></div>
+    <div class="container-fluid" style="width: 100%">
+        <h1 class="text-center mt-4">Mitra Kami</h1>
+
+        <div class="row py-5">
+            <div class="col-12">
+                <div class="overflow-auto d-flex justify-content-center">
+                    <div class="d-flex flex-nowrap image-gallery">
+                        <img src="assets/logo/join-11.png" alt="Event 1" />
+                        <img src="assets/logo/yss-12.png" alt="Event 2" />
+                        <img src="assets/logo/tdr-13.png" alt="Event 3" />
+                        <img src="assets/logo/mastreig-14.png" alt="Event 4" />
+                        <img src="assets/logo/meek-15.png" alt="Event 5" />
+                        <img src="assets/logo/templeton-16.png" alt="Event 6" />
+                        <img src="assets/logo/w-17.png" alt="Event 7" />
+                        <img src="assets/logo/action-18.png" alt="Event 8" />
+                        <img src="assets/logo/java-kirana-19.png" alt="Event 9" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <div class="overflow-auto d-flex justify-content-center">
+                    <div class="d-flex flex-nowrap image-gallery">
+                        <img src="assets/logo/acplore-1.png" alt="Event 1" />
+                        <img src="assets/logo/kori-2.png" alt="Event 2" />
+                        <img src="assets/logo/belmont-3.png" alt="Event 3" />
+                        <img src="assets/logo/clarion-4.png" alt="Event 4" />
+                        <img src="assets/logo/damson-5.png" alt="Event 5" />
+                        <img src="assets/logo/familyfirst-6.png" alt="Event 6" />
+                        <img src="assets/logo/feletrik-7.png" alt="Event 7" />
+                        <img src="assets/logo/greenhope-8.png" alt="Event 8" />
+                        <img src="assets/logo/indogiving-9.png" alt="Event 9" />
+                        <img src="assets/logo/indonesiacore-10.png" alt="Event 10" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="container-fluid" style="background-color: #c9d32c">
-        <div class="row text-center pb-5">
-            <h1 class="text-center text-white m-5">Program Kami</h1>
+        <div class="row boxProgramKami text-center pb-5 pt-5">
+            <h1 class="text-center text-white mb-5">Program Kami</h1>
 
-            <div class="col-sm-2"></div>
-            <div class="col-sm-3 ms-3">
+            <div class="boxProgramKami d-flex justify-content-center align-content-center">
                 <div class="box1">
                     <div class="mx-5 text-white">
-                        <h1 style="text-shadow: 2px 2px #000000">INVESMENT</h1>
-                        <p>Program investasi kami dirancang untuk memfasilitasi pertemuan antara para inovator yang bersemangat dan investor yang memiliki visi yang...</p>
-                        <button class="btnProgramKami">Pelajari Lebih Lanjut</button>
+                        <h1 class="hProduk" style="text-shadow: 2px 2px #000000">INVESMENT</h1>
+                        <p class="pProduk" style="text-shadow: 1px 1px #000000">Program investasi kami dirancang untuk memfasilitasi pertemuan antara para inovator yang bersemangat dan investor yang memiliki visi yang...</p>
+                        <button class="btnProgramKami">Pelajari Lanjut</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-2 ms-5"></div>
-            <div class="col-sm-3">
+                <div class="jarak"> </div>
                 <div class="box2">
                     <div class="mx-5 text-white">
-                        <h1 style="text-shadow: 2px 2px #000000">INVESMENT</h1>
-                        <p>Program investasi kami dirancang untuk memfasilitasi pertemuan antara para inovator yang bersemangat dan investor yang memiliki visi yang...</p>
-                        <button class="btnProgramKami">Pelajari Lebih Lanjut</button>
+                        <h1 class="hProduk" style="text-shadow: 2px 2px #000000">ADVISORY</h1>
+                        <p class="pProduk" style="text-shadow: 1px 1px #000000">Program investasi kami dirancang untuk memfasilitasi pertemuan antara para inovator yang bersemangat dan investor yang memiliki visi yang...</p>
+                        <button class="btnProgramKami">Pelajari Lanjut</button>
+
                     </div>
                 </div>
             </div>
-            <div class="col-sm-2"></div>
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="boxVolunter d-flex justify-content-center align-items-center">
             <div class="row d-flex justify-content-center align-items-center" style="width: 1000px; border-radius: 14px; height: 300px; background-image: url(assets/img/volunter.png); background-size: cover; background-repeat: no-repeat">
-                <div class="row text-white d-flex justify-content-center align-items-center" style="max-width: 800px">
+                <div class="row volunter text-white d-flex justify-content-center align-items-center" style="max-width: 800px">
                     <h1 class="text-center font-weight-bold">Anda dapat berkontribusi untuk mendukung TBN Indonesia dalam menciptakan transformasi sosial</h1>
                     <button class="btnVolunter">Bergabung Sebagai Sukarelawan</button>
                 </div>
@@ -321,55 +409,68 @@
     </div>
     <div class="container-fluid" style="background-color: #c9d32c">
         <footer>
-            <div class="container pt-5 text-white">
+            <div class="container pt-3 text-white">
                 <div class="row">
-                    <div class="col-3">
-                        <div class="row">
-                            <h2 class="">TBN INDONESIA</h2>
-                        </div>
-                        <div class="row ms-1">Indonesia Team Impact Hub Lippo Thamrin Lt.5 Jl. M.H.Thamrin No.20, Menteng Jakarta Pusat 10350, Indonesia</div>
+                    <div class="col-12 col-md-3 mb-3 mb-md-0">
+                        <h2 class="">TBN INDONESIA</h2>
+                        <p>Indonesia Team Impact Hub Lippo Thamrin Lt.5 Jl. M.H.Thamrin No.20, Menteng Jakarta Pusat 10350, Indonesia</p>
                     </div>
-                    <div class="col-2"></div>
-                    <div class="col-7">
-                        <div class="row">
-                            <ul class="d-flex text-white justify-content-end">
-                                <a href="">
-                                    <li class="text-white m-2">Beranda</li>
-                                </a>
-                                <a href="">
-                                    <li class="text-white m-2">Program Kami</li>
-                                </a>
-                                <a href="">
-                                    <li class="text-whitewhite m-2">Acara Kami</li>
-                                </a>
-                                <a href="">
-                                    <li class="text-white m-2">Tentang Kami</li>
-                                </a>
-                                <a href="">
-                                    <li class="text-white m-2">Blog</li>
-                                </a>
-                            </ul>
-                        </div>
-                        <div class="row" style="margin-left: 300px">
-                            <div class="class d-flex justify-content-start align-items-center ms-5">
-                                <img src="assets/icons/whatsapp.png" alt="" width="25px" height="auto" />
-                                <a href="wa.me/6282310001908"> <span>+62823 1000 1908</span></a>
-                            </div>
-                            <div class="class d-flex justify-content-start align-items-center ms-5">
-                                <img src="assets/icons/mail.png" alt="" width="25px" height="auto" />
-                                <a href=""><span>info@tbnindonesia.org</span></a>
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <ul class="d-flex text-white justify-content-center justify-content-md-end">
+                            <li class="text-white m-2"><a href="#">Beranda</a></li>
+                            <li class="text-white m-2"><a href="#">Program Kami</a></li>
+                            <li class="text-white m-2"><a href="#">Acara Kami</a></li>
+                            <li class="text-white m-2"><a href="#">Tentang Kami</a></li>
+                            <li class="text-white m-2"><a href="#">Blog</a></li>
+                        </ul>
+                        <div class="row mt-3 justify-content-center justify-content-md-end">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="assets/icons/instagram.png" alt="" />
+                                <img src="assets/icons/youtube.png" alt="" />
+                                <img src="assets/icons/whatsapp.png" alt="" />
+                                <img src="assets/icons/mail.png" alt="" />
+                                <img src="assets/icons/linkedin.png" alt="" />
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row text-center">
-                    <p class="text-center">© 2023 TBN Indonesia. All Rights Reserved.</p>
+                    <div class="col-12 col-md-3">
+                        <h2>Hubungi Kami</h2>
+                        <p>+62 818 0070 7860</p>
+                        <p>info@tbnindonesia.com</p>
+                    </div>
                 </div>
             </div>
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-dCkZXKAVht9DLzrAR6I8di2oQX7jxr+vs6/zU3zvsfi8rGvFv/6JlKzsoLRzyivk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-Vl8J6Dyve0VWFd3npP5h6xFHji0RT1vKwzp0kdfv9dXUMVC6yjQFJJKdS0xlxMfs" crossorigin="anonymous"></script>
+    <script>
+        const scrollImages = document.querySelectorAll('.image-gallery');
+        scrollImages.forEach((scrollImage) => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz " crossorigin="anonymous "></script>
+            scrollImage.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - scrollImage.offsetLeft;
+                scrollLeft = scrollImage.scrollLeft;
+            });
+            scrollImage.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+            scrollImage.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+            scrollImage.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - scrollImage.offsetLeft;
+                const walk = (x - startX) * 1; //scroll-fast
+                scrollImage.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
 </body>
 
 </html>
