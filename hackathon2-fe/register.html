@@ -32,7 +32,8 @@
         #username,
         #email,
         #password,
-        #rePassword {
+        #phone-number,
+        #confirmation_password {
             width: 100%;
             height: 50px;
             margin-bottom: 20px;
@@ -89,8 +90,9 @@
             }
             #username,
             #email,
+            #phone-number,
             #password,
-            #rePassword {
+            #confirmation_password {
                 height: 40px;
             }
         }
@@ -113,6 +115,10 @@
                     </div>
                     <div class="mb-3">
                         <input id="email" type="email" name="email" class="form-control" placeholder="Masukkan Alamat Email Anda" required autocomplete="email">
+
+                    </div>
+                    <div class="mb-3">
+                        <input id="phone-number" type="tel" name="phone_number" pattern="[0-9]{10,}" placeholder="Masukkan No Handphone Anda" required autocomplete="phone-number">
 
                     </div>
                     <div class="mb-3">
@@ -141,6 +147,7 @@
                 var formData = {
                     name: $('#name').val(),
                     email: $('#email').val(),
+                    phone_number: $('#phone-number').val(),
                     password: $('#password').val(),
                     confirmation_password: $('#confirmation_password').val()
                 };
