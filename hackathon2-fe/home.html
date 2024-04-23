@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TBN Indonesia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/FF2b1zp2n7c8w5V6fp/R85BjCbcBhkKt+5dxr4" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Source Sans 3';
+            text-decoration: none;
+            list-style-type: none;
+        }
+        
+        .navbar {
+            background-color: transparent !important;
+        }
+        
+        .navbar .collapse {
+            background-color: transparent !important;
+        }
+        
+        .image {
+            width: 100%;
+            height: 700px;
+            background-size: cover;
+            background-image: url(assets/img/background-content.png);
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-link,
+        .dropdown-toggle {
+            font-size: 21px;
+            font-weight: 600;
+            margin: 0 8px;
+            color: white;
+        }
+        
+        .logo {
+            width: 130px;
+            height: auto;
+        }
+        
+        .btnToMasuk {
+            width: 90px;
+            height: 45px;
+            background-color: #c9d32c;
+            border-radius: 5px;
+        }
+        
+        .btnToMasuk:hover,
+        #btnContent:hover {
+            background-color: #6d7125;
+        }
+        
+        .container-fluid {
+            z-index: 999;
+        }
+        
+        .textContent {
+            margin-top: 100px;
+            font-size: 80px;
+        }
+        
+        #btnContent,
+        #btnContent2 {
+            width: 180px;
+            height: 45px;
+            background-color: #c9d32c;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+            border: none;
+        }
+        
+        .box1 {
+            background-image: url(assets/img/card1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            border-radius: 5px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .box2 {
+            background-image: url(assets/img/card2.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            border-radius: 5px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btnProgramKami {
+            padding: 10px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 5px;
+            color: white;
+        }
+        
+        .boxVolunter {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .btnVolunter {
+            width: 280px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #c9d32c;
+            color: white;
+        }
+        
+        .btnVolunter:hover {
+            background-color: #6d7125;
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                width: 60px;
+            }
+            .navbar-nav {
+                margin-right: 0 !important;
+            }
+            .nav-link {
+                margin: 0 5px !important;
+            }
+            .textContent {
+                font-size: 40px !important;
+                margin-top: 50px !important;
+            }
+            #btnContent {
+                width: 140px !important;
+            }
+            .video-text {
+                text-align: center !important;
+                margin-top: 20px !important;
+            }
+            .textContent {
+                font-size: 27px !important;
+                text-align: center;
+            }
+            #btnContent {
+                width: 190px !important;
+                height: 25px !important;
+                font-size: 10px !important;
+                margin-top: 10px !important;
+            }
+            .image {
+                height: 350px;
+            }
+            .conten {
+                display: flex !important;
+                justify-items: center !important;
+                align-items: center !important;
+            }
+            .video-text {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container mt-4">
+                <a class="navbar-brand" href="#">
+                    <img class="logo" src="assets/logo/logo-tbn-indonesia.png" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Tentang Kami </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <li><a class="dropdown-item" href="#">Jakarta</a></li>
+                                <li><a class="dropdown-item" href="#">Semarang</a></li>
+                                <li><a class="dropdown-item" href="#">Yogyakarta</a></li>
+                                <li><a class="dropdown-item" href="#">Makassar</a></li>
+                                <li><a class="dropdown-item" href="#">Medan</a></li>
+                                <li><a class="dropdown-item" href="#">Bandung</a></li>
+                                <li><a class="dropdown-item" href="#">Surabaya</a></li>
+                                <li><a class="dropdown-item" href="#">Gresik</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Acara Kami </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <li><a class="dropdown-item" href="#">Jakarta</a></li>
+                                <li><a class="dropdown-item" href="#">Semarang</a></li>
+                                <li><a class="dropdown-item" href="#">Yogyakarta</a></li>
+                                <li><a class="dropdown-item" href="#">Makassar</a></li>
+                                <li><a class="dropdown-item" href="#">Medan</a></li>
+                                <li><a class="dropdown-item" href="#">Bandung</a></li>
+                                <li><a class="dropdown-item" href="#">Surabaya</a></li>
+                                <li><a class="dropdown-item" href="#">Gresik</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Program Kami </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                <li><a class="dropdown-item" href="#">Jakarta</a></li>
+                                <li><a class="dropdown-item" href="#">Semarang</a></li>
+                                <li><a class="dropdown-item" href="#">Yogyakarta</a></li>
+                                <li><a class="dropdown-item" href="#">Makassar</a></li>
+                                <li><a class="dropdown-item" href="#">Medan</a></li>
+                                <li><a class="dropdown-item" href="#">Bandung</a></li>
+                                <li><a class="dropdown-item" href="#">Surabaya</a></li>
+                                <li><a class="dropdown-item" href="#">Gresik</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item btnToMasuk">
+                            <a class="nav-link" href="register.html">Masuk</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center align-items-center mx-5">
+                <h1 class="text-white text text-left textContent">
+                    KOLABORASI UNTUK<br />MASA DEPAN YANG<br /> BERKELANJUTAN
+                </h1>
+
+                <div class="row content d-flex align-items-center">
+                    <div class="col-12 col-md-2 text-center"><button id="btnContent">Apa yang kita lakukan</button></div>
+                    <div class="col-12 col-md-2 text-white font-weight-bold video-text">
+                        <h5>Putar Video</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-color: #c9d32c">
+        <div class="row d-flex align-items-center justify-content-center" style="margin: 0 300px">
+            <h2 class="text-center font-weight-bold text-white mt-4">Tentang Kami</h2>
+            <div class="row text-center text-white" style="font-size: 20px">
+                Selamat datang di TBN Indonesia, satu-satunya sumber terkemuka untuk solusi bisnis yang inovatif dan berdaya saing di Indonesia. Kami merupakan Yayasan Sosial yang menaungi komunitas yang terdiri dari Investor, NGO, Educator, Philantrophy yang membawa
+                transformasi kepada kehidupan yang lebih baik memecahkan masalah sosial melalui kewirausahaan sosial.
+            </div>
+            <div class="row text-center justify-content-between align-items-center" style="width: 400px">
+                <div class="col-2"><img src="assets/icons/instagram.png" alt="" /></div>
+                <div class="col-2"><img src="assets/icons/youtube.png" alt="" /></div>
+                <div class="col-2"><img src="assets/icons/whatsapp.png" alt="" /></div>
+                <div class="col-2"><img src="assets/icons/mail.png" alt="" /></div>
+                <div class="col-2"><img src="assets/icons/linkedin.png" alt="" /></div>
+            </div>
+            <br />
+            <div class="row text-center d-flex justify-content-center align-items-center">
+                <button class="my-4 text-black" style="width: 220px; height: 35px; border: none; border-radius: 5px; background-color: aliceblue">Pelajari Lebih Lanjut</button>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-danger" style="height: 350px; width: 100%">
+        <div class="row"></div>
+    </div>
+    <div class="container-fluid" style="background-color: #c9d32c">
+        <div class="row text-center pb-5">
+            <h1 class="text-center text-white m-5">Program Kami</h1>
+
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3 ms-3">
+                <div class="box1">
+                    <div class="mx-5 text-white">
+                        <h1 style="text-shadow: 2px 2px #000000">INVESMENT</h1>
+                        <p>Program investasi kami dirancang untuk memfasilitasi pertemuan antara para inovator yang bersemangat dan investor yang memiliki visi yang...</p>
+                        <button class="btnProgramKami">Pelajari Lebih Lanjut</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 ms-5"></div>
+            <div class="col-sm-3">
+                <div class="box2">
+                    <div class="mx-5 text-white">
+                        <h1 style="text-shadow: 2px 2px #000000">INVESMENT</h1>
+                        <p>Program investasi kami dirancang untuk memfasilitasi pertemuan antara para inovator yang bersemangat dan investor yang memiliki visi yang...</p>
+                        <button class="btnProgramKami">Pelajari Lebih Lanjut</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="boxVolunter d-flex justify-content-center align-items-center">
+            <div class="row d-flex justify-content-center align-items-center" style="width: 1000px; border-radius: 14px; height: 300px; background-image: url(assets/img/volunter.png); background-size: cover; background-repeat: no-repeat">
+                <div class="row text-white d-flex justify-content-center align-items-center" style="max-width: 800px">
+                    <h1 class="text-center font-weight-bold">Anda dapat berkontribusi untuk mendukung TBN Indonesia dalam menciptakan transformasi sosial</h1>
+                    <button class="btnVolunter">Bergabung Sebagai Sukarelawan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: #c9d32c">
+        <footer>
+            <div class="container pt-5 text-white">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="row">
+                            <h2 class="">TBN INDONESIA</h2>
+                        </div>
+                        <div class="row ms-1">Indonesia Team Impact Hub Lippo Thamrin Lt.5 Jl. M.H.Thamrin No.20, Menteng Jakarta Pusat 10350, Indonesia</div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-7">
+                        <div class="row">
+                            <ul class="d-flex text-white justify-content-end">
+                                <a href="">
+                                    <li class="text-white m-2">Beranda</li>
+                                </a>
+                                <a href="">
+                                    <li class="text-white m-2">Program Kami</li>
+                                </a>
+                                <a href="">
+                                    <li class="text-whitewhite m-2">Acara Kami</li>
+                                </a>
+                                <a href="">
+                                    <li class="text-white m-2">Tentang Kami</li>
+                                </a>
+                                <a href="">
+                                    <li class="text-white m-2">Blog</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="row" style="margin-left: 300px">
+                            <div class="class d-flex justify-content-start align-items-center ms-5">
+                                <img src="assets/icons/whatsapp.png" alt="" width="25px" height="auto" />
+                                <a href="wa.me/6282310001908"> <span>+62823 1000 1908</span></a>
+                            </div>
+                            <div class="class d-flex justify-content-start align-items-center ms-5">
+                                <img src="assets/icons/mail.png" alt="" width="25px" height="auto" />
+                                <a href=""><span>info@tbnindonesia.org</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <p class="text-center">© 2023 TBN Indonesia. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz " crossorigin="anonymous "></script>
+</body>
+
+</html>
