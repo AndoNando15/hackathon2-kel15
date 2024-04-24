@@ -284,9 +284,16 @@
 
                                     </ul>
                                 </li>
-                                <li class="nav-item btnToMasuk">
-                                    <a class="nav-link" href="register.html">Masuk</a>
-                                </li>
+                                <div id="auth-login">
+                                    <li class="nav-item btnToMasuk">
+                                        <a class="nav-link" href="register.html">Masuk</a>
+                                    </li>
+                                </div>
+                                <div id="auth-logout">
+                                    <li class="nav-item btnToMasuk">
+                                        <button class="btn nav-link me-3 se-3" id="btn-logout">Keluar</button>
+                                    </li>
+                                </div>
                             </ul>
                         </div>
                     </div>
@@ -566,6 +573,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-dCkZXKAVht9DLzrAR6I8di2oQX7jxr+vs6/zU3zvsfi8rGvFv/6JlKzsoLRzyivk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-Vl8J6Dyve0VWFd3npP5h6xFHji0RT1vKwzp0kdfv9dXUMVC6yjQFJJKdS0xlxMfs" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         const scrollImages = document.querySelectorAll('.image-gallery');
         scrollImages.forEach((scrollImage) => {
@@ -591,6 +599,53 @@
                 const walk = (x - startX) * 1; //scroll-fast
                 scrollImage.scrollLeft = scrollLeft - walk;
             });
+        });
+
+        var token = localStorage.getItem('token');
+
+        function toggleNavbar() {
+            const authNavbar = document.getElementById('auth-login');
+            const authLogout = document.getElementById('auth-logout');
+            
+            if (token) {
+                authNavbar.style.display = 'none';
+                authLogout.style.display = 'block';
+            } else {
+                authNavbar.style.display = 'block';
+                authLogout.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleNavbar();
+        });
+
+        function logout() {
+            if (!token) {
+                console.log('No token found in local storage.');
+                return;
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://127.0.0.1:8000/api/logout',
+                dataType: 'json',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                },
+                success: function (response) {
+                    localStorage.removeItem('token');
+                    console.log('Logout successful.');
+                    window.location.href = 'home.html';
+                },
+                error: function (xhr, status, error) {
+                    console.error('Logout failed:', xhr.responseJSON.message);
+                }
+            });
+        }
+
+        $('#btn-logout').click(function () {
+            logout();
         });
     </script>
 </body>

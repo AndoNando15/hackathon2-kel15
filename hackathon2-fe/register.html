@@ -117,8 +117,8 @@
                         <input id="email" type="email" name="email" class="form-control" placeholder="Masukkan Alamat Email Anda" required autocomplete="email">
 
                     </div>
-                    <div class="mb-3">
-                        <input id="phone-number" type="tel" name="phone_number" pattern="[0-9]{10,}" placeholder="Masukkan No Handphone Anda" required autocomplete="phone-number">
+                    <div>
+                        <input class="p-2" id="phone-number" type="tel" name="phone_number" pattern="[0-9]{10,}" placeholder="Masukkan No Handphone Anda" required autocomplete="phone-number">
 
                     </div>
                     <div class="mb-3">
@@ -163,8 +163,7 @@
                     success: function(response) {
                         console.log(response)
                         if (response.status) {
-                            localStorage.setItem('token', response.token);
-                            // window.location.href = 'login.html';
+                            window.location.href = 'login.html';
                             alert(response.message);
                         } else {
                             alert(response.message);
